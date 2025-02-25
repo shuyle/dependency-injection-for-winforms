@@ -21,6 +21,9 @@ namespace WindowsFormsDI
             this.serviceProvider = serviceProvider;
         }
 
+        /// <summary>
+        /// For demo other service DI
+        /// </summary>
         private void btnOpenChild_Click(object sender, EventArgs e)
         {
             // get childForm DI container
@@ -28,6 +31,9 @@ namespace WindowsFormsDI
             childForm.Show();
         }
 
+        /// <summary>
+        /// For demo TabContainerForm
+        /// </summary>
         private void btnOpenTabContainerForm_Click(object sender, EventArgs e)
         {
             var tabContainerForm = serviceProvider.GetRequiredService<TabContainerForm>();

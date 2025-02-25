@@ -1,12 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsDI
@@ -18,12 +11,18 @@ namespace WindowsFormsDI
     {
         private readonly IServiceProvider serviceProvider;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public TabContainerForm(IServiceProvider serviceProvider)
         {
             InitializeComponent();
             this.serviceProvider = serviceProvider;
         }
 
+        /// <summary>
+        /// Demo add form to tab page
+        /// </summary>
         private void AddFormToTabPage<T>(string tabTitle) where T : Form
         {
             var form = serviceProvider.GetRequiredService<T>();
